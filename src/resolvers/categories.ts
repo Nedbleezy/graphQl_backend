@@ -1,5 +1,5 @@
-import { products } from "../data";
-import { Category, CategoryShape, CategoryMap } from "../data/type";
+import { products } from '../data';
+import { Category, CategoryShape, CategoryMap } from '../data/type';
 
 const categoriesResolver = (): CategoryShape[] => {
     const result = products.reduce((categories, product) => {
@@ -8,12 +8,12 @@ const categoriesResolver = (): CategoryShape[] => {
         if (!categories[category]) {
             categories[category] = {
                 name: category,
-                products: []
+                products: [],
             };
         }
 
         const {
-            [category]: { products }
+            [category]: { products },
         } = categories;
 
         products.push(product);
@@ -24,7 +24,7 @@ const categoriesResolver = (): CategoryShape[] => {
     return [
         {
             name: Category.all,
-            products
+            products,
         },
         ...Object.values(result),
     ];

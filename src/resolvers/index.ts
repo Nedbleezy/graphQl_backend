@@ -8,8 +8,8 @@ const resolvers = {
         categories: categoriesResolver,
         category: categoryResolver,
         currencies: currencyResolver,
-        product: productResolver
-    }
+        product: productResolver,
+    },
 };
 
 export default resolvers;
